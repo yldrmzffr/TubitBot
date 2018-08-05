@@ -10,5 +10,5 @@ Planlanan Özellikler
 
 Kullanılacak Teknolojiler
 - Python3
-- Django (Yönetim Arayüzü)
+- Django (Yönetim Sistemi)
 - idiotDB Veri Tabanı (v1 çıkınca)
