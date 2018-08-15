@@ -6,8 +6,8 @@ Planlanan Özellikler
 - ~~Basit Sorulara cevap verebilme~~
 - ~~Türkçe Asistan Ceyd-A ile sorulara cevap verebilme~~
 - Oyun Oynama
-- Özel gün hatırlatmalası 
-- İstek Şikayet Öneri alma (Anonim)
+- Özel gün hatırlatmalası
+- ~~İstek Şikayet Öneri alma (Anonim)~~
 - idiotDB ye taşıma
 
 Kullanılacak Teknolojiler
