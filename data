@@ -1,0 +1,20 @@
+{"etkinlik": "Şuan kayıtlı hiçbir etkinlik yok. Takipte Kalmayı Unutma!",
+
+ "yetkili": """
+---------YONETİM------------
+Başkan: telegramadresi
+Yarımcı 1: telegramadresi
+Yarımcı 2: telegramadresi
+Yarımcı 3: telegramadresi
+----------GRUPLAR-----------
+""",
+
+"yardım": """
+Etkinlikler
+Yetkili
+Yardım
+
+Yukarıdaki komutlar ile tübit hakkında bilgi alabilir. Eğer daha farklı sorun varsa yazarak CEYD-A ya sorabilirsin.
+""",
+
+"muzaffer":"Evet Muzaffer'i tanıyorum. Benim Telegram Botunu ve benim bağlatılarımı o yaptı : @yldrmzffr"}
