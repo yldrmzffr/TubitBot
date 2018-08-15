@@ -34,19 +34,26 @@ def cevapver(message):
             return True
     return False
 
+def isimkoruyucu(message):
+    bot.send_message(message.chat.id,"Benim bir isimim TubitBot ve bunu değştirmene izin veremem. Beni böyle sev.".format(message.from_user.first_name))
+    arg = {'username': '<<CEYD-A-USERNAME>>', 'token': '<<CEYD-A-TOKEN>>','code': "senin adın TubitBot" ,'type':'text'}
+    requests.post("http://beta.ceyd-a.com/jsonengine.jsp", data=arg)
+    logging.info("İsim koryucu çalıştı.")
 
 def ceydayasor(message):
     try:
         arg = {'username': '<<CEYD-A-USERNAME>>', 'token': '<<CEYD-A-TOKEN>>','code': message.text.lower() ,'type':'text'}
         r= requests.post("http://beta.ceyd-a.com/jsonengine.jsp", data=arg).content.decode('utf-8')[1:-3]
         cevap = json.loads(r).get("answer")
-
-        if cevap != '':
-            bot.send_message(message.chat.id,cevap)
-            logging.info("Ceyd-a cevap verdi : {}".format(cevap))
+        if cevap.find("Yeni adım artık") > -1 or cevap.find("İsmim artık") > -1:
+            isimkoruyucu(message)
         else:
-            bot.send_message(message.chat.id,"Ceyd-A API Beta sürümünde çalıştığı için bazı komutlarda eksilik var. Play Store dan tam sürümü indirip bu komutu tekrar deneyebilirsin.")
-            logging.info("Ceyd-a boş yapti. : {}".format(r))
+            if cevap != '':
+                bot.send_message(message.chat.id,cevap)
+                logging.info("Ceyd-a cevap verdi : {}".format(cevap))
+            else:
+                bot.send_message(message.chat.id,"Ceyd-A API Beta sürümünde çalıştığı için bazı komutlarda eksilik var. Play Store dan tam sürümü indirip bu komutu tekrar deneyebilirsin.")
+                logging.info("Ceyd-a boş yapti. : {}".format(r))
 
     except Exception as e:
         bot.send_message(message.chat.id,"Bir hata oluştu ve bildirildi. En yakın zamanda düzeltilecek.")
