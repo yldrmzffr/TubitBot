@@ -8,6 +8,7 @@ Planlanan Özellikler
 - Oyun Oynama
 - Özel gün hatırlatmalası 
 - İstek Şikayet Öneri alma (Anonim)
+- idiotDB ye taşıma
 
 Kullanılacak Teknolojiler
 - Python3
