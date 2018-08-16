@@ -6,6 +6,7 @@ Planlanan Özellikler
 - ~~Basit Sorulara cevap verebilme~~
 - ~~Türkçe Asistan Ceyd-A ile sorulara cevap verebilme~~
 - ~~İsim Koruma Modu~~
+- Kullanıcı İsmini Korkuma
 - Oyun Oynama
 - Özel gün hatırlatmalası
 - ~~İstek Şikayet Öneri alma (Anonim)~~
