@@ -21,7 +21,11 @@ logging.info("Mesajlar Oluşturuldu")
 def bildirimal(message):
     global bildirim
     with open("bildirimler.txt","a") as bilfile:
-        bilfile.write("[{}] [{}] [{}] \n".format(message.from_user.username,message.from_user.first_name+message.from_user.last_name,message.text))
+        bilfile.write("[{username}] [{name}] [{message}] \n".format(
+            username=message.from_user.username,
+            name=message.from_user.first_name+message.from_user.last_name,
+            text=message.text
+       ))
     bot.send_message(message.chat.id,"{}({}) Bildirimini aldık belki şuan okuyoruz. En yakın sürede dönüş/düzenleme yapılacak.".format(message.from_user.first_name,message.from_user.username))
     bildirim = False
 
@@ -77,10 +81,10 @@ def send_welcome(message):
 def echo_all(message):
     global bildirim
     logging.info("{}- mesajı alındı.".format(message.text))
-    if bildirim == True:
+    if bildirim:
         bildirimal(message)
     else:
-        if cevapver(message) == False:
+        if not cevapver(message):
             logging.info("Cevap Bulunamadı Ceyd-a ya soruluyor..")
             ceydayasor(message)
 
